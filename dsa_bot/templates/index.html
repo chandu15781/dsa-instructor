@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlgoMentor — DSA Instructor</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       TOP HEADER
+  ════════════════════════════════════════════ -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect width="28" height="28" rx="7" fill="url(#g1)"/>
+          <path d="M7 10h5M7 14h9M7 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="20" cy="10" r="2.5" fill="white" opacity="0.9"/>
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="28" y2="28">
+              <stop offset="0%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-name">AlgoMentor</div>
+        <div class="logo-sub">DSA Instructor · Powered by Claude</div>
+      </div>
+    </div>
+
+    <nav class="header-nav">
+      <button onclick="quickAsk('Explain Arrays in Python from scratch')">Arrays</button>
+      <button onclick="quickAsk('Explain Binary Trees and BST in Python')">Trees</button>
+      <button onclick="quickAsk('Explain Dynamic Programming from scratch with Python examples')">DP</button>
+      <button onclick="quickAsk('Explain Graph algorithms: BFS and DFS in Python')">Graphs</button>
+      <button onclick="quickAsk('Explain Merge Sort and Quick Sort with Python code')">Sorting</button>
+    </nav>
+
+    <div class="header-badge">
+      <span class="badge-dot"></span>
+      ONLINE
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN LAYOUT
+  ════════════════════════════════════════════ -->
+  <div class="layout">
+
+    <!-- ─── LEFT SIDEBAR ─── -->
+    <aside class="sidebar">
+
+      <div class="sb-section">
+        <div class="sb-label">📦 Data Structures</div>
+        <button class="sb-btn" onclick="quickAsk('Explain Arrays with Python examples and time complexity')">Arrays</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Linked Lists: Singly and Doubly with Python')">Linked Lists</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Stack and Queue with Python implementation')">Stack & Queue</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Hash Maps and Hash Sets in Python with examples')">Hash Map / Set</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Binary Tree and BST with Python implementation')">Binary Tree / BST</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Heaps and Priority Queue in Python using heapq')">Heaps</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Graphs: adjacency list vs matrix, directed vs undirected')">Graphs</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Tries (Prefix Trees) with Python implementation')">Tries</button>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">⚡ Algorithms</div>
+        <button class="sb-btn" onclick="quickAsk('Explain Binary Search with Python code and all variations')">Binary Search</button>
+        <button class="sb-btn" onclick="quickAsk('Explain all major sorting algorithms with Python code')">Sorting Algorithms</button>
+        <button class="sb-btn" onclick="quickAsk('Explain BFS and DFS with Python code and when to use each')">BFS & DFS</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Dynamic Programming: memoization vs tabulation with Python')">Dynamic Programming</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Two Pointers and Sliding Window pattern in Python')">Two Pointers</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Recursion and Backtracking with Python examples')">Recursion</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Greedy Algorithms with Python examples')">Greedy</button>
+        <button class="sb-btn" onclick="quickAsk('Explain Dijkstra shortest path algorithm in Python')">Dijkstra</button>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">🎯 Practice Problems</div>
+        <button class="sb-btn" onclick="quickAsk('Solve Two Sum problem optimally in Python')">Two Sum</button>
+        <button class="sb-btn" onclick="quickAsk('Solve Longest Common Subsequence in Python')">LCS</button>
+        <button class="sb-btn" onclick="quickAsk('Solve 0/1 Knapsack problem with Dynamic Programming in Python')">Knapsack</button>
+        <button class="sb-btn" onclick="quickAsk('Solve N-Queens problem using Backtracking in Python')">N-Queens</button>
+        <button class="sb-btn" onclick="quickAsk('Solve Coin Change problem with Dynamic Programming in Python')">Coin Change</button>
+      </div>
+
+      <!-- Big-O Quick Reference -->
+      <div class="bigo-card">
+        <div class="bigo-title">⏱ Big-O Quick Ref</div>
+        <div class="bigo-row"><span>Constant</span>  <span class="c1">O(1)</span></div>
+        <div class="bigo-row"><span>Logarithmic</span><span class="c2">O(log n)</span></div>
+        <div class="bigo-row"><span>Linear</span>    <span class="c3">O(n)</span></div>
+        <div class="bigo-row"><span>n log n</span>   <span class="c4">O(n log n)</span></div>
+        <div class="bigo-row"><span>Quadratic</span> <span class="c5">O(n²)</span></div>
+        <div class="bigo-row"><span>Exponential</span><span class="c6">O(2ⁿ)</span></div>
+      </div>
+
+    </aside>
+
+    <!-- ─── CHAT PANEL ─── -->
+    <main class="chat-panel">
+
+      <!-- Messages area -->
+      <div class="messages" id="messages">
+
+        <!-- Welcome state -->
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" rx="12" fill="url(#wg)"/>
+              <path d="M12 18h8M12 24h16M12 30h12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="34" cy="18" r="4" fill="white" opacity="0.9"/>
+              <defs>
+                <linearGradient id="wg" x1="0" y1="0" x2="48" y2="48">
+                  <stop offset="0%" stop-color="#4ade80"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h1>Your Personal <span>DSA</span> Instructor</h1>
+          <p>Ask anything about Data Structures & Algorithms.<br/>I explain every concept from scratch with Python code.</p>
+
+          <div class="starter-grid">
+            <button class="starter" onclick="quickAsk('What is Big O notation? Explain with real examples.')">
+              <span>📊</span>
+              <div>
+                <strong>Big O Notation</strong>
+                <small>What it is & why it matters</small>
+              </div>
+            </button>
+            <button class="starter" onclick="quickAsk('Implement a Binary Search Tree in Python from scratch with insert, search, delete')">
+              <span>🌳</span>
+              <div>
+                <strong>Binary Search Tree</strong>
+                <small>Build one in Python</small>
+              </div>
+            </button>
+            <button class="starter" onclick="quickAsk('Explain Dynamic Programming from scratch. What is memoization?')">
+              <span>💡</span>
+              <div>
+                <strong>Dynamic Programming</strong>
+                <small>From zero to hero</small>
+              </div>
+            </button>
+            <button class="starter" onclick="quickAsk('Solve: given an array find the longest subarray with sum equal to k')">
+              <span>🎯</span>
+              <div>
+                <strong>Problem Solving</strong>
+                <small>Subarray sum = k</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /messages -->
+
+      <!-- Input bar -->
+      <div class="input-area">
+        <div class="input-box">
+          <textarea
+            id="user-input"
+            placeholder="Ask about any DSA concept, algorithm, or coding problem…"
+            rows="1"
+          ></textarea>
+          <button class="send-btn" id="send-btn" onclick="sendMessage()" title="Send (Enter)">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 16V4M4 10l6-6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="input-hint">Enter to send &nbsp;·&nbsp; Shift+Enter for new line</div>
+      </div>
+
+    </main>
+  </div><!-- /layout -->
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
